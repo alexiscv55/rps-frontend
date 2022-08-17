@@ -1,0 +1,21 @@
+$emojis: (
+    'rock': '🗿',
+    'paper': '📄',
+    'scissors': '✂️',
+    'lizard': '🦎',
+    'spock': '🖖',
+    'victory': '🏆',
+    'defeat': '💀',
+    'draw': '🥂',
+    'robot': '🤖'
+);
+
+* {
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+@each $name, $emoji in $emojis {
+    .#{$name}::before {
+        content: $emoji;
+    }
+}

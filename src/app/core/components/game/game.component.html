@@ -1,0 +1,20 @@
+<div class="game__result-container">
+    <span class="{{ (observable$ | async)?.opponentHand | lowercase }} game__result-item"></span>
+    <span class="robot game__result-item"></span>
+</div>
+
+<div class="game__button-container">
+    <button *ngFor="let hand of hands"
+        [ngClass]="[
+            'game__button',
+            hand | lowercase,
+            hand === lastClicked ? 'game__button--clicked' : ''
+        ]"
+        [attr.aria-label]="hand"
+        (click)="onButtonClick(hand)"
+    ></button>
+</div>
+
+<div class="game__result-container">
+    <span class="{{ (observable$ | async)?.result | lowercase }} game__result-item"></span>
+</div>

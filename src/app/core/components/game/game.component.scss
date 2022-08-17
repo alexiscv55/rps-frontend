@@ -1,0 +1,56 @@
+$standard-size: 6;
+
+.game__button-container, .game__result-container {
+    display: flex;
+    justify-content: center;
+}
+
+.game__button-container {
+    flex-wrap: wrap;
+    margin: #{calc($standard-size/2)}rem 1rem;
+}
+
+.game__result-container {
+    flex-wrap: wrap-reverse;
+}
+
+.game__result-item {
+    font-size: #{$standard-size}rem;
+    margin: 1rem;
+    width: #{$standard-size*1.5}rem;
+}
+
+.game__result-item.game__result-text {
+    font-size: 2rem;
+    margin: 0;
+    width: 100%;
+}
+
+.game__button {
+    font-size: #{calc($standard-size/2)}rem;
+    margin: 1rem;
+    border: 2px solid black;
+    border-radius: #{$standard-size}rem;
+    height: #{$standard-size}rem;
+    width: #{$standard-size}rem;
+
+
+    &--clicked {
+        background-color: lightblue;
+    }
+}
+
+@media (pointer: fine) {
+    .game__button {
+        transition: transform .2s;
+    
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.5) rotate(15deg);
+        }
+    
+        &:active {
+            background-color: transparent;
+        }
+    }
+}
